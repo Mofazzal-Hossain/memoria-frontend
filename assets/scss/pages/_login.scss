@@ -1,0 +1,250 @@
+@use '../abstracts/mixins' as *;
+@use '../base/reset' as *;
+
+.mh-wlc-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #E5DED4 50%, #F5F1EB 50%);
+    .mh-wlc-content{
+        background: rgba(255,255,255,0.95);
+        max-width: 400px;
+        min-width: 400px;
+        position: relative;
+        box-shadow: 0px 15px 30px rgba(0,0,0,0.20);
+        height: fit-content;
+        padding: 32px;
+        border: 1px solid rgba(255,255,255,0.30);
+        @include bd-radius(24px);
+        text-align: center;
+        .mh-top-arrow{
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            color: rgb(102, 102, 102);
+            background: rgba(0, 0, 0, 0);   
+            transition: all 0.3s ease;
+            @include bd-radius(20px);
+            @include d-flex();
+            @include align-items(center);
+            @include justify-content(center);
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(102,102,102,0.06);
+            }
+        }
+        .mh-wlc-header{
+            h1{
+                font-size: 28px;
+                letter-spacing: -0.5px;
+                font-weight: 700;
+                margin: 14px 0 8px;
+            }
+            p{
+                font-size: 13px;
+                line-height: 18px;
+                padding: 0 6px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .mh-wlc-box{
+            .mh-wlc-header{
+                h1{
+                    margin: 14px 0 12px;
+                    position: relative;
+                    font-weight: 800;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 50px;
+                        height: 3px;
+                        background: rgba(139,111,78,1.00);
+                    }
+                }
+            }
+            .mh-wlc-list{
+                ul{
+                    li{
+                        margin-bottom: 12px;
+                        background: rgba(255,255,255,0.60);
+                        box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+                        padding: 12px 10px;
+                        border: 1px solid rgba(139,111,78,0.20);
+                        @include bd-radius(12px);
+                        @include d-flex();
+                        @include align-items(center);
+                        gap: 12px;
+                        font-size: 13px;
+                        line-height: 18px;
+                        .icon{
+                            width: 40px;
+                            height: 40px;
+                            font-size: 20px;
+                            background: rgba(139,111,78,0.10);
+                            border: 1px solid rgba(139,111,78,0.20);
+                            @include bd-radius(10px);
+                            @include d-flex();
+                            @include align-items(center);
+                            @include justify-content(center);
+                        }
+                    }
+                }
+            }
+            .mh-login-actions{
+                @include d-flex();
+                @include flex-direction(column);
+                gap: 12px;
+                margin-top: 16px;
+               
+            }
+        }
+        .mh-wlc-box,
+        .mh-create-account,
+        .mh-login-account {
+            opacity: 0;
+            display: none;
+            transition: opacity 1s ease;
+            &.mh-active {
+                display: block;
+                animation: fadeIn 0.6s ease forwards;
+                animation-delay: 0.1s;
+            }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .mh-wlc-account-form{
+            .form-group{
+                margin-bottom: 24px;
+                .icon{
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 20px;
+                    @include box-circle();
+                    @include d-flex();
+                    @include align-items(center);
+                    @include justify-content(center);
+                    left: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &:hover{
+                        background-color:rgba(102,102,102,0.06);
+                    }
+                }
+                input{
+                    padding: 0px 16px 0px 56px;
+                    line-height: 19.2px;
+                    letter-spacing: 0.15px;
+                    font-size: 16px;
+                    height: 48px;
+                    min-height: auto;
+                    color: rgb(0, 0, 0);
+                    background: rgb(255, 255, 255);
+                    @include bd-radius(4px);
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                    &:focus{
+                        border: 2px solid rgb(0, 0, 0);
+                        box-shadow: none;
+                        outline: none;
+
+                        &~label{
+                            transform: scale(0.75);
+                            background: #fff;
+                            left: 15px;
+                            color: #000;
+                            top: -10px;
+                        }
+                    }
+                }
+                label{
+                    padding: 0;
+                    left: 56px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: auto;
+                    transition: all 0.3s ease;
+                }
+            }
+            .mh-submit-btn{
+                margin-top: -8px;
+            }
+        }
+        .mh-continue-with{
+            margin-top: 28px;
+            margin-bottom: 20px;
+            color: rgba(0,0,0,0.60);
+            font-size: 14px;
+        }
+        .mh-continue-guest{
+            color: rgba(0,0,0,0.80);
+            margin-top: 12px;
+            font-size: 15px;
+            letter-spacing: 0.1px;
+            line-height: 20px;
+            padding: 9px 12px;
+            transition: all 0.3s ease;
+            @include bd-radius(8px);
+            gap: 5px;
+            &:hover{
+                background-color: rgba(0,0,0,0.06);
+            }
+            i{
+                font-size: 16px;
+            }
+        }
+        .mh-have-account{
+            color: rgba(0,0,0,0.60);
+            font-size: 14px;
+            line-height: 1;
+            margin-top: 4px;
+            a{
+                color: rgba(0,0,0,1.00);
+                margin-left: 6px;
+                font-weight: 600;
+            }
+        }
+        .mh-login-account{
+            .mh-wlc-header {
+                h1{
+                    margin-bottom: 40px;
+                }
+            }
+            .mh-wlc-account-form{
+                input{
+                    padding: 0 16px;
+                }
+                label{
+                    left: 16px;
+                }
+                a{
+                    margin-top: -8px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgba(0,0,0,1.00);
+                }
+                .mh-btn{
+                    height: 56px;
+                }
+            }
+            .mh-continue-with{
+                margin-top: 20px;
+            }
+            .mh-have-account{
+                margin-top: 32px;
+            }
+        }
+    }
+    
+}

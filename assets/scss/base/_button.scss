@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as *;
+@use '../base/reset' as *;
+.mh-btn{
+    height: 44px;
+    @include bd-radius(12px);
+    transition: all 0.3s ease;
+    @include align-items(center);
+    @include justify-content(center);
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.10);
+    background-color: rgba(26,26,26,1.00);
+    color: rgba(26,26,26,1.00);
+    font-weight: 600;
+    i{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    &.mh-btn-black{
+        box-shadow: 0px 6px 12px rgba(26,26,26,0.40);
+        color: rgba(255,255,255,1.00);
+        &:hover{
+            opacity: 0.9;
+        }
+    }
+    &.mh-btn-light{
+        height: 48px;
+        background-color: rgba(255,255,255,0.90);
+        border: 2px solid rgba(26,26,26,0.30);
+        &:hover{
+            background-color: rgba(0,0,0,0.06);
+        }
+    }
+    &.mh-border-light{
+        border: 1.5px solid rgba(0,0,0,0.12);
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
+    }
+}

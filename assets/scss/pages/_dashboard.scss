@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as *;
+@use '../base/reset' as *;
+
+.mh-dashboard{
+    @include d-flex();
+    height: 100vh;
+    background: rgba(244,239,227,1.00);
+    overflow: hidden;
+}

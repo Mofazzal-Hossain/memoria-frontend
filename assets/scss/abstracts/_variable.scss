@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Helvetica Bold';
+  src:url('/assets/fonts/Helvetica-Bold.woff') format('woff');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url('/assets/fonts/Helvetica.woff') format('woff');
+  font-weight: 400;
+}
+
+$font-helvetica-bold: 'Helvetica Bold', sans-serif;
+$font-helvetica-regular: 'Helvetica Regular', sans-serif;
+
+// ================================ //
+// color
+// ================================ //
+
+$color-black: rgba(26,26,26,1.00);
+$color-body: rgba(74,74,74,1.00);
+
+// ================================ //
+//Media Query
+// ================================ //
+
+$max1920: "only screen and (max-width: 1920px)";
+$max1850: "only screen and (max-width: 1850px)";
+$max1800: "only screen and (max-width: 1800px)";
+$max1760: "only screen and (max-width: 1760px)";
+$max1700: "only screen and (max-width: 1700px)";
+$max1650: "only screen and (max-width: 1620px)";
+$max1620: "only screen and (max-width: 1650px)";
+$max1580: "only screen and (max-width: 1580px)";
+$max1500: "only screen and (max-width: 1500px)";
+$max1440: "only screen and (max-width: 1440px)";
+$max1399: "only screen and (max-width: 1399.98px)";
+$max1366: "only screen and (max-width: 1366px)";
+$max1280: "only screen and (max-width: 1280px)";
+$max1199: "only screen and (max-width: 1199.98px)";
+$max1024: "only screen and (max-width: 1024.98px)";
+$max991: "only screen and (max-width: 991.98px)";
+$max767: "only screen and (max-width: 767.98px)";
+$max599: "only screen and (max-width: 599.98px)";
+$max575: "only screen and (max-width: 575.98px)";
+$max480: "only screen and (max-width: 480px)";
+$max375: "only screen and (max-width: 375.98px)";
+$max350: "only screen and (max-width: 350px)";
+$min1200: "only screen and (min-width: 1200px)";
+$min768: "only screen and (min-width: 768px)";
+

@@ -1,0 +1,141 @@
+@use '../abstracts/mixins' as *;
+@use '../base/reset' as *;
+.mh-left-sidebar{
+    width: 240px;
+    background: rgba(244,239,227,1.00);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(224,217,201,1.00);
+    height: 100%;
+    @include d-flex();
+    @include flex-direction(column);
+    .sidebar-top{
+        padding: 20px 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        @include d-flex();
+        @include justify-content(space-between);
+        @include align-items(center);
+        height: 73px;
+        .logo{
+            width: 120px;
+            img{
+                width: 100%;
+            }
+        }
+        .arrow{
+            width: 32px;
+            height: 32px;
+            font-size: 24px;
+            color: rgb(85, 85, 85);
+            background: rgba(0,0,0,0.05);   
+            transition: all 0.3s ease;
+            @include bd-radius(20px);
+            @include d-flex();
+            @include align-items(center);
+            @include justify-content(center);
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(0,0,0,0.15);
+                transform: scale(1.05);
+            }
+        }
+    }
+    .sidebar-nav{
+        flex: 1;
+        overflow-y: auto;
+        ul{
+            @include d-flex();
+            flex-direction: column;
+            gap: 8px;
+            margin: 20px 8px;
+            li{
+                a{
+                    padding: 12px 16px;
+                    height: 64px;
+                    @include d-flex();
+                    @include align-items(center);
+                    gap: 12px;
+                    @include bd-radius(8px);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: rgba(74,74,74,1.00);
+                    &:hover{
+                        background: rgba(0, 0, 0, 0.05);
+                        transform: scale(1.02);
+                    }
+                    &.active{
+                        background-color: rgba(26,26,26,1.00);
+                        color: rgba(255,255,255,1.00);
+                        font-weight: bold;
+                        &:hover{
+                            transform: scale(1);
+                        }
+                    }
+                    i{
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+    .sidebar-footer{
+        padding: 20px 16px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        @include d-flex();
+        @include justify-content(space-between);
+        @include align-items(center);
+        gap: 12px;
+        height: 73px;
+        .user{
+            width: 100%;
+            @include d-flex();
+            @include justify-content(space-between);
+            @include align-items(center);
+            flex-wrap: nowrap;
+            .user-info{
+                @include d-flex();
+                @include align-items(center);
+                flex-wrap: nowrap;
+                gap: 12px;
+                .avatar{
+                    width: 40px;
+                    height: 40px;
+                    @include box-circle();
+                }
+                .user-name {
+                    flex: 1;
+                    color: rgba(74,74,74,1.00);
+                    font-weight: bold;
+                    max-width: 125px;
+                    .user-id{
+                        font-size: 12px;
+                        line-height: 1;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-weight: 400;
+                        color: rgba(136,136,136,1.00);
+                    }
+                }
+            }
+            .mh-logout{
+                width: 32px;
+                height: 32px;
+                font-size: 22px;
+                color: rgb(136, 136, 136);
+                background: rgba(0,0,0,0.05);   
+                transition: all 0.3s ease;
+                @include bd-radius(20px);
+                @include d-flex();
+                @include align-items(center);
+                @include justify-content(center);
+                cursor: pointer;
+                &:hover{
+                    background-color: rgba(0,0,0,0.15);
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
