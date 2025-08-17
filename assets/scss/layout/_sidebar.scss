@@ -1,11 +1,13 @@
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variable' as *;
 @use '../base/reset' as *;
 .mh-left-sidebar{
     width: 240px;
-    background: rgba(244,239,227,1.00);
+    background: $color-light-grayish;
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.05);
-    border-right: 1px solid rgba(224,217,201,1.00);
+    border-right: 1px solid $color-light-grayish;
     height: 100%;
+    transition: width 0.5s ease;
     @include d-flex();
     @include flex-direction(column);
     .sidebar-top{
@@ -14,11 +16,12 @@
         @include d-flex();
         @include justify-content(space-between);
         @include align-items(center);
-        height: 73px;
+        width: 100%;
         .logo{
             width: 120px;
-            img{
-                width: 100%;
+            img {
+                height: auto;
+                max-width: 70px;
             }
         }
         .arrow{
@@ -42,6 +45,8 @@
     .sidebar-nav{
         flex: 1;
         overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
         ul{
             @include d-flex();
             flex-direction: column;
@@ -60,20 +65,25 @@
                     font-weight: 500;
                     font-size: 16px;
                     color: rgba(74,74,74,1.00);
+                    width: 100%;
+                    transition: width 0.3s ease;
                     &:hover{
                         background: rgba(0, 0, 0, 0.05);
                         transform: scale(1.02);
                     }
                     &.active{
-                        background-color: rgba(26,26,26,1.00);
+                        background-color: $color-primary;
                         color: rgba(255,255,255,1.00);
                         font-weight: bold;
                         &:hover{
                             transform: scale(1);
                         }
                     }
-                    i{
-                        font-size: 28px;
+                    .icon{
+                        line-height: 1;
+                        i{
+                            font-size: 28px;
+                        }
                     }
                 }
             }
@@ -98,6 +108,8 @@
                 @include align-items(center);
                 flex-wrap: nowrap;
                 gap: 12px;
+                opacity: 1;
+                transition: opacity 0.3s ease, max-width 0.3s ease;
                 .avatar{
                     width: 40px;
                     height: 40px;
@@ -134,6 +146,32 @@
                 &:hover{
                     background-color: rgba(0,0,0,0.15);
                     transform: scale(1.05);
+                }
+            }
+        }
+    }
+    &.collapsed{
+        width: 80px;
+        .sidebar-top{
+            .arrow {
+                margin-top: 10px;
+                transform: rotate(180deg);
+            }
+        }
+        li{
+            a{
+                width: fit-content;
+                transition: width 0.3s ease;
+                .text{
+                    display: none;
+                }
+            }
+        }
+        .sidebar-footer{
+            .user{
+                @include justify-content(center);
+                .user-info{
+                    display: none;
                 }
             }
         }

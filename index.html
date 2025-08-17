@@ -14,10 +14,10 @@
             <div class="sidebar-top">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
                     </a>
                 </div>
-                <div class="arrow">
+                <div class="arrow" id="sidebarHide">
                     <i class="ri-arrow-left-s-line"></i>
                 </div>
             </div>
@@ -29,12 +29,12 @@
                             <div class="text">Home</div>
                        </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <div class="icon"><i class="ri-search-line"></i></div>
                             <div class="text">Search</div>
                        </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#">
                             <div class="icon"><i class="ri-notification-3-line"></i></div>
@@ -53,7 +53,7 @@
                             <div class="text">Scan QR</div>
                        </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <div class="icon"><i class="ri-add-box-line"></i></div>
                             <div class="text">Create Medallion</div>
@@ -64,7 +64,7 @@
                             <div class="icon"><i class="ri-robot-2-line"></i></div>
                             <div class="text">Ai Tools</div>
                        </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="sidebar-footer">
@@ -82,7 +82,130 @@
                 </div>
             </div>
         </div>
-        <div class="mh-main-content"></div>
+        <div class="mh-main-content">
+            <div class="mh-news-feed">
+                <div class="mh-news-content">
+                    <!-- item -->
+                    <div class="mh-news-item">
+                        <div class="mh-news-item-header">
+                            <a href="#">
+                                <div class="mh-news-item-avatar">
+                                    <img src="assets/images/posted-user.jpg" class="w-100" alt="user profile">
+                                    <div class="mh-news-type"></div>
+                                </div>
+                                <div class="mh-news-item-info">
+                                    <div class="mh-news-item-name">John Doe</div>
+                                    <div class="mh-news-item-username">Jack Peper <span>hared a photo memory of</span></div>
+                                    <div class="mh-news-item-posted">4 months ago</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mh-news-item-content">
+                            <div class="mh-news-item-content-image">
+                                <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                            </div>
+                            
+                        </div>
+                        <div class="mh-news-item-footer">
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#">
+                                    <i class="ri-heart-line"></i>
+                                    <div class="reaction-count">2</div>
+                                </a>
+                            </div>
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#" id="mhOpenComments">
+                                    <i class="ri-chat-4-line"></i>
+                                    <div class="comments-count">1</div>
+                                </a>
+                               
+                            </div>
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                                    <i class="ri-share-forward-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mh-news-item-comments">
+                            <div class="avatar">
+                                <img src="assets/images/user-profile.png" class="w-100 h-100" alt="user profile">
+                            </div>
+                            <textarea name="comments" id="comments"></textarea>
+                            <button type="button" class="mh-send-comments"><i class="ri-send-plane-2-line"></i></button>
+                        </div>
+                    </div>
+                    <!-- item -->
+                <div class="mh-news-item">
+                        <div class="mh-news-item-header">
+                            <a href="#">
+                                <div class="mh-news-item-avatar">
+                                    <img src="assets/images/posted-user.jpg" class="w-100" alt="user profile">
+                                    <div class="mh-news-type"></div>
+                                </div>
+                                <div class="mh-news-item-info">
+                                    <div class="mh-news-item-name">John Doe</div>
+                                    <div class="mh-news-item-username">Jack Peper <span>hared a photo memory of</span></div>
+                                    <div class="mh-news-item-posted">4 months ago</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mh-news-item-content">
+                            <div class="mh-news-item-content-image">
+                                <img src="assets/images/memoria.jpg" class="w-100 h-100" alt="memoria">
+                            </div>
+                            
+                        </div>
+                        <div class="mh-news-item-footer">
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#">
+                                    <i class="ri-heart-line"></i>
+                                    <!-- <div class="reaction-count">2</div> -->
+                                </a>
+                            </div>
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#" id="mhOpenComments">
+                                    <i class="ri-chat-4-line"></i>
+                                    <!-- <div class="comments-count">1</div> -->
+                                </a>
+                               
+                            </div>
+                            <div class="mh-news-item-footer-icon">
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                                    <i class="ri-share-forward-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mh-news-item-comments">
+                            <div class="avatar">
+                                <img src="assets/images/user-profile.png" class="w-100" alt="user profile">
+                            </div>
+                            <textarea name="comments" id="comments"></textarea>
+                            <button type="button" class="mh-send-comments"><i class="ri-send-plane-2-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- share memoria -->
+                <div class="offcanvas offcanvas-bottom mh-share-memoria" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                <div class="offcanvas-header mh-share-memoria-header">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Share Memory</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body mh-share-memoria-body small">
+                    <ul>
+                        <li>
+                            <div class="icon"><i class="ri-share-forward-line"></i></div>
+                            <div class="text"> Share via... </div>
+                        </li>
+                        <li>
+                            <div class="icon"><i class="ri-file-copy-line"></i></div>
+                            <div class="text"> Copy Link </div>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>

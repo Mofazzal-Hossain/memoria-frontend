@@ -1,9 +1,249 @@
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variable' as *;
 @use '../base/reset' as *;
 
 .mh-dashboard{
     @include d-flex();
     height: 100vh;
-    background: rgba(244,239,227,1.00);
+    background: $color-light-grayish;
     overflow: hidden;
+    .mh-main-content{
+        flex: 1;
+        overflow-y: auto;
+        height: 100vh;
+        -ms-overflow-style: none;
+        scrollbar-width: none;  
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .mh-news-feed{
+            max-width: 780px;
+            margin: 36px auto 24px;
+            .mh-news-content{
+                @include d-flex();
+                flex-direction: column;
+                gap: 24px;
+                .mh-news-item{
+                    background: rgb(255, 255, 255);
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+                    @include bd-radius(24px);
+                    padding: 16px 18px 12px;
+                    .mh-news-item-header{
+                        a{
+                            @include d-flex();
+                            gap: 14px;
+                            .mh-news-item-avatar{
+                                width: 48px;
+                                height: 48px;
+                                box-shadow: 0px 2px 4px rgba(0,0,0,0.10);
+                                img{
+                                    @include bd-radius(16px);
+                                }
+                            }
+                            .mh-news-item-name{
+                                font-weight: 700;
+                                color: $color-black;
+                                letter-spacing: -0.4px;
+                                margin-bottom: 2px;
+                                font-size: 17px;
+                                line-height: 1;
+                            }
+                            .mh-news-item-username{
+                                font-size: 15px;
+                                color: $color-black;
+                                letter-spacing: -0.2px;
+                                line-height: 20px;
+                                font-weight: 700;
+                                span{
+                                    color: $color-body;
+                                    font-weight: 400;
+                                }
+                            }
+                            .mh-news-item-posted{
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: $color-body;
+                            }
+                        }
+                    }
+                    .mh-news-item-content{
+                        padding: 24px 0 20px;
+                        .mh-news-item-content-image{
+                            img{
+                                @include bd-radius(16px);
+                                max-height: 732px;
+                                min-height: 732px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    .mh-news-item-footer{
+                        @include d-flex();
+                        @include align-items(center);
+                        gap: 20px;
+                        .mh-news-item-footer-icon{
+                         
+                            a{
+                                padding: 8px;
+                                min-width: 38px;
+                                min-height: 38px;
+                                @include d-flex();
+                                @include align-items(center);
+                                @include justify-content(center);
+                                @include bd-radius(20px);
+                                background: rgba(248,250,252,1.00);
+                                i{
+                                    font-size: 22px;
+                                    color: $color-body;
+                                    line-height: 1;
+                                }
+                                .reaction-count{
+                                    color: rgb(255, 107, 157);
+                                    font-size: 14px;
+                                    letter-spacing: -0.2px;
+                                    font-weight: 600;
+                                    line-height: 1;
+                                    margin-left: 6px;
+                                }
+                                .comments-count{
+                                    background: rgba(226,232,240,1.00);
+                                    font-size: 12px;
+                                    color: $color-body;
+                                    min-width: 18px;
+                                    min-height: 18px;
+                                    @include bd-radius(10px);
+                                    line-height: normal;
+                                    @include d-flex();
+                                    @include align-items(center);
+                                    @include justify-content(center);
+                                    margin-left: 4px;
+                                }
+                               
+                            }
+                            &:first-child{
+                                a{
+                                    background: transparent;
+                                    min-width: auto;
+                                    min-height: auto;
+                                    padding: 4px;
+                                }
+                            }
+                        }
+                    }
+                    .mh-news-item-comments{
+                        margin-top: 12px;
+                        padding: 12px 18px;
+                        border-top: 1px solid rgb(241, 245, 249);
+                        @include d-flex();
+                        @include align-items(end);
+                        gap: 22px;
+                        position: relative;
+                        left: -18px;
+                        right: -16px;
+                        width: 105%;
+                        display: none;
+                        &.opened{
+                            @include d-flex();
+                        }
+                        .avatar{
+                            width: 32px;
+                            height: 32px;
+                        }
+                        textarea{
+                            flex: 1;
+                            background: rgba(248,250,252,1.00);
+                            color: rgba(51,51,51,1.00);
+                            font-size: 15px;
+                            min-height: 40px;
+                            padding: 10px 14px;
+                            @include bd-radius(20px);
+                            border: 0;
+                            resize: none;
+                            &::placeholder{
+                                color: #94A3B8;
+                            }
+                        }
+                        .mh-send-comments{
+                            box-shadow: 0px 0px 0px rgba(0,0,0,0.00);
+                            @include bd-radius(20px);
+                            background: rgba(226,232,240,1.00);
+                            font-size: 20px;
+                            color: rgb(203, 213, 225);
+                            width: 40px;
+                            height: 40px;
+                            @include d-flex();
+                            @include align-items(center);
+                            @include justify-content(center);
+                            transition: all 0.3s ease;
+                            &:hover{
+                                background: $color-primary;
+                                color: white;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .mh-share-memoria{
+                border-top-left-radius: 24px;
+                border-top-right-radius: 24px;
+                padding-bottom: 0;
+                .mh-share-memoria-header{
+                    @include d-flex();
+                    @include align-items(center);
+                    gap: 14px;
+                    border-bottom: 1px solid rgba(241,245,249,1.00);
+                    padding: 16px 20px;
+                    h5{
+                        font-weight: 700;
+                        color: $color-black;
+                        letter-spacing: -0.3px;
+                        font-size: 18px;
+                        line-height: 1;
+                    }
+                    button{
+                        border: 0;
+                        color: rgb(100, 116, 139);
+                        font-size: 16px;
+                        &:focus{
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                }
+                .mh-share-memoria-body{
+                    padding: 0;
+                    ul{
+                        li{
+                            @include d-flex();
+                            @include align-items(center);
+                            gap: 16px;
+                            padding: 16px 20px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            border-bottom: 1px solid rgba(241,245,249,1.00);
+                     
+                            .icon{
+                                width: 32px;
+                                height: 32px;
+                                @include d-flex();
+                                @include align-items(center);
+                                @include justify-content(center);
+                                i{
+                                    font-size: 24px;
+                                    color: rgb(99, 102, 241);
+                                }
+                            }
+                            .text{
+                                color: rgba(26,26,26,1.00);
+                                font-weight: 500;
+                                letter-spacing: -0.2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
