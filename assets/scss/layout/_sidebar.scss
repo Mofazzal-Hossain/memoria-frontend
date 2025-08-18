@@ -10,6 +10,12 @@
     transition: width 0.5s ease;
     @include d-flex();
     @include flex-direction(column);
+    @media #{$max767}{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+    }
     .sidebar-top{
         padding: 20px 16px;
         border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -17,8 +23,12 @@
         @include justify-content(space-between);
         @include align-items(center);
         width: 100%;
+        @media  #{$max767}{
+            display: none;
+        }
         .logo{
             width: 120px;
+            
             img {
                 height: auto;
                 max-width: 70px;
@@ -52,13 +62,21 @@
             flex-direction: column;
             gap: 8px;
             margin: 20px 8px;
+            @media #{$max767}{
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                height: 100%;
+                margin: 0;
+                gap: 0;
+            }
             li{
                 a{
                     padding: 12px 16px;
-                    height: 64px;
+                    height: 55px;
                     @include d-flex();
                     @include align-items(center);
-                    gap: 12px;
+                    gap: 8px;
                     @include bd-radius(8px);
                     cursor: pointer;
                     transition: all 0.3s ease;
@@ -67,6 +85,12 @@
                     color: rgba(74,74,74,1.00);
                     width: 100%;
                     transition: width 0.3s ease;
+                    @media #{$max767}{
+                        padding: 0;
+                        height: auto;
+                        width: auto;
+                        color: rgba(0,0,0,1.00);
+                    }
                     &:hover{
                         background: rgba(0, 0, 0, 0.05);
                         transform: scale(1.02);
@@ -74,7 +98,10 @@
                     &.active{
                         background-color: $color-primary;
                         color: rgba(255,255,255,1.00);
-                        font-weight: bold;
+                        @media #{$max767}{
+                            background: transparent;
+                            color: rgba(0,0,0,1.00);
+                        }
                         &:hover{
                             transform: scale(1);
                         }
@@ -82,7 +109,12 @@
                     .icon{
                         line-height: 1;
                         i{
-                            font-size: 28px;
+                            font-size: 20px;
+                        }
+                    }
+                    .text{
+                        @media #{$max767}{
+                            display: none;
                         }
                     }
                 }
@@ -97,6 +129,9 @@
         @include align-items(center);
         gap: 12px;
         height: 73px;
+        @media  #{$max767}{
+            display: none;
+        }
         .user{
             width: 100%;
             @include d-flex();

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="assets//css/style.min.css">
+</head>
+<body>
+    <div class="mh-dashboard">
+        <div class="mh-left-sidebar">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                    </a>
+                </div>
+                <div class="arrow" id="sidebarHide">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <div class="icon"><i class="ri-home-4-line"></i></div>
+                            <div class="text">Home</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="ri-notification-3-line"></i></div>
+                            <div class="text">Notifications</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="profile.html" class="active">
+                            <div class="icon"><i class="ri-user-3-line"></i></div>
+                            <div class="text">Profile</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="ri-qr-scan-2-line"></i></div>
+                            <div class="text">Scan QR</div>
+                       </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user">
+                    <div class="user-info">
+                        <div class="avatar">
+                            <img src="assets/images/user-profile.png" class="w-100" alt="user profile">
+                        </div>
+                        <div class="user-name">
+                            <div>John Doe</div>
+                            <div class="user-id">guest_8hxlm8rm2yb@guest.local</div>
+                        </div>
+                    </div>
+                    <a href="#" class="mh-logout"><i class="ri-logout-box-r-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mh-main-content">
+            <div class="mh-user-profile">
+                <div class="mh-user-cover-image">
+                    <img src="assets/images/user-cover-image.png" class="w-100" alt="cover image">
+                </div>
+                <!-- user profile header -->
+                <div class="mh-user-profile-header">
+                    <div class="user-profile-header-top">
+                        <div class="user-profile">
+                            <div class="avatar">
+                                <img src="assets/images/user-avatar.png" alt="user profile">
+                            </div>
+                            <div class="username">@jackpeper</div>
+                        </div>
+                        <div class="logout-account">
+                            <a href="#" class="mh-logout"><i class="ri-logout-box-r-line"></i></a>
+                        </div>
+                    </div>
+                    <!-- user archive -->
+                    <div class="user-archive">
+                        <a href="#" class="memorial">
+                            <div class="count"> 
+                                <i class="ri-medal-line"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="text">Memorials</div>
+                        </a>
+                        <a href="#" class="followers">
+                            <div class="count"> 
+                                <i class="ri-group-2-line"></i> 
+                                <span>0</span>
+                            </div>
+                            <div class="text">Followers</div>
+                        </a>
+                        <a href="#" class="following">
+                            <div class="count"> 
+                                <i class="ri-group-line"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="text">Following</div>
+                        </a>
+                    </div>
+                    <!-- profile completion -->
+                    <div class="profile-completion">
+                        <div class="d-flex justify-content-between">
+                            <p>Profile Completion</p>
+                            <div class="percent">8%</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 8%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- user profile tabs -->
+                    <div class="user-profile-tabs">
+                        <ul>
+                            <li>
+                                <a href="#" class="active">
+                                    <i class="ri-pencil-line"></i>
+                                    <span>Edit Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ri-share-line"></i>
+                                    <span>Share</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ri-question-line"></i>
+                                    <span>Restart Tutorial</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- user profile categories -->
+                <div class="mh-user-profile-categories">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                                <i class="ri-layout-grid-line"></i>
+                                <span> Medallions</span>
+                            </button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                <i class="ri-heart-line"></i>
+                                <span>Favourites</span>
+                            </button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="medallions-cat">
+                                <ul>
+                                    <li><a href="#">Animals</a></li>
+                                    <li><a href="#">Man</a></li>
+                                </ul>
+                            </div>
+                            <div class="medallions-posts-wrapper">
+                                <div class="medallions-no-posts">No medallions found</div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                            <div class="favourites-posts-wrapper">
+                                <div class="favourites-no-posts">
+                                    <i class="ri-heart-line"></i>
+                                    <p>No favourite medallions found. Heart medallions to add them to your favourites.</p>
+                                    <a href="#">Browse Medallions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

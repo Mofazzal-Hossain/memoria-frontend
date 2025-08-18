@@ -1,0 +1,287 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variable' as *;
+@use '../base/reset' as *;
+
+.mh-user-profile {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .mh-user-cover-image {
+        aspect-ratio: 3;
+        position: relative;
+
+        img {
+            position: absolute;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .mh-user-profile-header {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.00);
+        background-color: white;
+        margin-top: -60px;
+        @include bd-radius(30px);
+        padding: 12px;
+        position: relative;
+
+        .user-profile-header-top {
+            @include d-flex();
+            @include justify-content(space-between);
+            padding-bottom: 12px;
+
+            .user-profile {
+                @include d-flex();
+                gap: 16px;
+
+                .avatar {
+                    width: 112px;
+                    height: 112px;
+                    @include d-flex();
+                    @include align-items(center);
+                    @include justify-content(center);
+                    @include bd-radius(40px);
+                    margin-top: -50px;
+                    overflow: hidden;
+                    background: white;
+                    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.00);
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        @include box-circle();
+                    }
+                }
+
+                .username {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $color-black;
+                    margin-top: 4px;
+                }
+            }
+
+            .logout-account {
+                a {
+                    padding: 8px;
+                    font-size: 24px;
+                    margin-top: 4px;
+                    display: block;
+                    color: $color-black;
+                }
+            }
+        }
+
+        .user-archive {
+            @include d-flex();
+            @include justify-content(space-around);
+            text-align: center;
+            margin-bottom: 12px;
+
+            &>a {
+                @include d-flex();
+                @include flex-direction(column);
+                color: $color-black;
+                padding: 8px;
+                gap: 2px;
+
+                .count {
+                    font-size: 18px;
+                    font-weight: 600;
+                    @include d-flex();
+                    @include align-items(center);
+                    @include justify-content(center);
+
+                    i {
+                        margin-right: 4px;
+                        font-weight: 400;
+                    }
+                }
+
+                .text {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1;
+                }
+            }
+        }
+
+        .profile-completion {
+            font-size: 11px;
+            color: $color-black;
+            line-height: 1;
+
+            .percent {
+                font-weight: 600;
+            }
+
+            .progress {
+                margin-top: 2px;
+                height: 4px;
+                @include bd-radius(2px);
+                background: rgb(244, 239, 227);
+
+                .progress-bar {
+                    background: rgb(255, 152, 0);
+                    @include bd-radius(2px);
+                }
+            }
+        }
+
+        .user-profile-tabs {
+            margin-top: 25px;
+            margin-bottom: 4px;
+
+            ul {
+                @include d-flex();
+                gap: 8px;
+                width: 100%;
+
+                li {
+                    flex: 1;
+                    @media #{$max480}{
+                        flex: 100%;
+                    }
+                    a {
+                        @include d-flex();
+                        @include align-items(center);
+                        @include justify-content(center);
+                        @include bd-radius(24px);
+                        gap: 8px;
+                        height: 40px;
+                        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.00);
+                        border: 1px solid rgba(0, 0, 0, 0.12);
+                        color: $color-black;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+
+                        i {
+                            font-size: 18px;
+                        }
+
+                        &:hover {
+                            background: rgba(0, 0, 0, 0.06);
+                        }
+
+                        &.active {
+                            background: $color-black;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mh-user-profile-categories {
+        margin-top: 16px;
+        background: transparent;
+        nav{
+            border-bottom: 1px solid rgba(224,224,224,1.00);
+            .nav-tabs{
+                border-bottom: none;
+                .nav-link{
+                    border: none;
+                    border-radius: 0px;
+                    color: $color-black;
+                    font-size: 16px;
+                    padding: 12px 16px;
+                    min-height: 44px;
+                    min-width: 80px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    @include d-flex();
+                    @include align-items(center);
+                    @include justify-content(center);
+                    gap: 8px;
+                    &.active{
+                        font-weight: 600;
+                        border: none;
+                        background-color: transparent;
+                        border-bottom: 2px solid rgba(0,0,0,1.00);
+                        i{
+                            color: $color-black;
+                        }
+                    }
+                    i{
+                        color: rgb(102, 102, 102);
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                .medallions-cat{
+                    margin: 16px 16px 28px;
+                    ul{
+                        @include d-flex();
+                        gap: 16px;
+                        flex-wrap: wrap;
+                        li{
+                            a{
+                                @include d-flex();
+                                @include align-items(center);
+                                @include justify-content(center);
+                                gap: 8px;
+                                color: $color-black;
+                                background: white;
+                                font-size: 14px;
+                                padding: 6px 16px;
+                                border: 01;
+                                box-shadow: 0px 0px 0px rgba(0,0,0,0.00);
+                                border-radius: 24px;
+                                transition: all 0.3s ease;
+                                min-width: 90px;
+                                letter-spacing: 0.1px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+                .medallions-no-posts{
+                    text-align: center;
+                    font-size: 14px;
+                    color: $color-black;
+                }
+                .favourites-posts-wrapper{
+                    padding: 16px;
+                    padding-top: 28px;
+                    .favourites-no-posts{
+                        text-align: center;
+                        i{
+                            font-size: 48px;
+                            color: rgb(102, 102, 102);
+                            line-height: 1;
+                        }
+                        p{
+                            margin: 32px 0;
+                            font-size: 14px;
+                            color: $color-black;
+                        }
+                        a{
+                            @include inline-flex();
+                            @include align-items(center);
+                            @include justify-content(center);
+                            height: 40px;
+                            min-width: 120px;
+                            border: 1px solid rgba(0, 0, 0, 0.12);
+                            box-shadow: 0px 0px 0px rgba(0,0,0,0.00);
+                            @include bd-radius(24px);
+                            padding: 10px 24px;
+                            font-size: 14px;
+                            color: $color-black;
+                            letter-spacing: 0.1px;
+                            transition: all 0.3s ease;
+                            &:hover{
+                                background: rgba(0,0,0,.06);
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
