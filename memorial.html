@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="assets//css/style.min.css">
+</head>
+<body>
+    <div class="mh-dashboard">
+        <div class="mh-left-sidebar">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                    </a>
+                </div>
+                <div class="arrow" id="sidebarHide">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <div class="icon"><i class="ri-home-4-line"></i></div>
+                            <div class="text">Home</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="ri-notification-3-line"></i></div>
+                            <div class="text">Notifications</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="profile.html" class="active">
+                            <div class="icon"><i class="ri-user-3-line"></i></div>
+                            <div class="text">Profile</div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="ri-qr-scan-2-line"></i></div>
+                            <div class="text">Scan QR</div>
+                       </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user">
+                    <div class="user-info">
+                        <div class="avatar">
+                            <img src="assets/images/user-profile.png" class="w-100" alt="user profile">
+                        </div>
+                        <div class="user-name">
+                            <div>John Doe</div>
+                            <div class="user-id">guest_8hxlm8rm2yb@guest.local</div>
+                        </div>
+                    </div>
+                    <a href="#" class="mh-logout"><i class="ri-logout-box-r-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mh-main-content">
+            <div class="mh-memorial-content">
+                <div class="header">
+                    <div class="cover">
+                        <img src="assets/images/user-cover-image.png" class="w-100 h-100" alt="memorial cover">
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/user-avatar.png" alt="user profile">
+                        <p>My lovely Sister</p>
+                        <h1>Lizah Simmons</h1>
+                        <p>February 10, 1984 - July 11, 2024</p>
+                        <ul class="list">
+                            <li>
+                                <a href="#">
+                                    <i class="ri-pencil-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ri-heart-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ri-qr-scan-2-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="memorial-tabs">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-timeline-tab" data-bs-toggle="tab" data-bs-target="#nav-timeline" type="button" role="tab" aria-controls="nav-timeline" aria-selected="true">Timeline</button>
+                            <button class="nav-link" id="nav-bio-tab" data-bs-toggle="tab" data-bs-target="#nav-bio" type="button" role="tab" aria-controls="nav-bio" aria-selected="false">Bio</button>
+                            <button class="nav-link" id="nav-media-tab" data-bs-toggle="tab" data-bs-target="#nav-media" type="button" role="tab" aria-controls="nav-media" aria-selected="false">Media</button>
+                            <button class="nav-link" id="nav-tributes-tab" data-bs-toggle="tab" data-bs-target="#nav-tributes" type="button" role="tab" aria-controls="nav-tributes" aria-selected="false">Tributes</button>
+                            <button class="nav-link" id="nav-music-tab" data-bs-toggle="tab" data-bs-target="#nav-music" type="button" role="tab" aria-controls="nav-music" aria-selected="false">Music</button>
+                           
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab" tabindex="0">
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab" tabindex="0">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-bio-about-tab" data-bs-toggle="tab" data-bs-target="#nav-bio-about" type="button" role="tab" aria-controls="nav-bio-about" aria-selected="true">About</button>
+                                    <button class="nav-link" id="nav-bio-details-tab" data-bs-toggle="tab" data-bs-target="#nav-bio-details" type="button" role="tab" aria-controls="nav-bio-details" aria-selected="false">Details</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-bio-about" role="tabpanel" aria-labelledby="nav-bio-about-tab" tabindex="0">
+                                    <div class="bio-about-content">
+                                        <!-- About -->
+                                        <div class="item">
+                                            <h2>About</h2>
+                                            <ul>
+                                                <li>
+                                                    <h4>Descriptions:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Tribute -->
+                                        <div class="item">
+                                            <h2>Tribute</h2>
+                                            <ul>
+                                                <li>
+                                                    <h4>Message:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Personal Information -->
+                                        <div class="item">
+                                            <h2>Personal Information</h2>
+                                            <ul>
+                                                <li>
+                                                    <h4>Location:</h4>
+                                                    <p>Sint qui similique o</p>
+                                                </li>
+                                                <li>
+                                                    <h4>Occupation:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                                <li>
+                                                    <h4>Education:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                                <li>
+                                                    <h4>Religious Affiliation:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Family -->
+                                        <div class="item">
+                                            <h2>Family</h2>
+                                            <ul>
+                                                <li>
+                                                    <h4>Spouse:</h4>
+                                                    <p>Sint qui similique o</p>
+                                                </li>
+                                                <li>
+                                                    <h4>Parents:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                                <li>
+                                                    <h4>children:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                                <li>
+                                                    <h4>children:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Memorial Services -->
+                                        <div class="item">
+                                            <h2>Memorial Services</h2>
+                                            <ul>
+                                                <li>
+                                                    <h4>Funeral Home:</h4>
+                                                    <p>Sint qui similique o</p>
+                                                </li>
+                                                <li>
+                                                    <h4>Service Details:</h4>
+                                                    <p>Delectus pariatur</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-bio-details" role="tabpanel" aria-labelledby="nav-bio-details-tab" tabindex="0">
+                                    <div class="bio-location-info">
+                                        <h2>Map Location</h2>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29734365.651830666!2d111.87571699964418!3d-24.531038489728477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2sbd!4v1755619193974!5m2!1sen!2sbd" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        <div class="details">
+                                            <h2>Cemetery information</h2>
+                                            <ul>
+                                                <li>
+                                                    <p>Cemetery Name:</p>
+                                                    <h3>Keystone Heights City Cemetery (Old Section)</h3>
+                                                </li>
+                                                <li>
+                                                    <p>Cemetery plot number:</p>
+                                                    <h3>Lot #20, Space 2, First Addition, Plat Book 3 Page 23, Bradford County, Florida</h3>
+                                                </li>
+                                                <li>
+                                                    <p>Cemetery Location:</p>
+                                                    <h3>Keystone Heights, Florida</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-tributes" role="tabpanel" aria-labelledby="nav-tributes-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab" tabindex="0">...</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

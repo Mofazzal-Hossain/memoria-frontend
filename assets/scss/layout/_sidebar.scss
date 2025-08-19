@@ -1,7 +1,8 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/variable' as *;
 @use '../base/reset' as *;
-.mh-left-sidebar{
+
+.mh-left-sidebar {
     width: 240px;
     background: $color-light-grayish;
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.05);
@@ -10,59 +11,71 @@
     transition: width 0.5s ease;
     @include d-flex();
     @include flex-direction(column);
-    @media #{$max767}{
+
+    @media #{$max767} {
         position: fixed;
         bottom: 0;
         width: 100%;
         height: 60px;
     }
-    .sidebar-top{
+
+    .sidebar-top {
         padding: 20px 16px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         @include d-flex();
         @include justify-content(space-between);
         @include align-items(center);
         width: 100%;
-        @media  #{$max767}{
+        position: relative;
+
+        @media #{$max767} {
             display: none;
         }
-        .logo{
+
+        .logo {
             width: 120px;
-            
+
             img {
                 height: auto;
                 max-width: 70px;
             }
         }
-        .arrow{
+
+        .arrow {
+            position: absolute;
+            right: 16px;
             width: 32px;
             height: 32px;
             font-size: 24px;
             color: rgb(85, 85, 85);
-            background: rgba(0,0,0,0.05);   
+            background: rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             @include bd-radius(20px);
             @include d-flex();
             @include align-items(center);
             @include justify-content(center);
             cursor: pointer;
-            &:hover{
-                background-color: rgba(0,0,0,0.15);
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.15);
                 transform: scale(1.05);
             }
         }
     }
-    .sidebar-nav{
+
+    .sidebar-nav {
         flex: 1;
         overflow-y: auto;
         overflow-x: hidden;
         width: 100%;
-        ul{
+
+        ul {
             @include d-flex();
             flex-direction: column;
             gap: 8px;
             margin: 20px 8px;
-            @media #{$max767}{
+
+            @media #{$max767} {
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
@@ -70,11 +83,13 @@
                 margin: 0;
                 gap: 0;
             }
-            li{
-                a{
+
+            li {
+                a {
                     padding: 12px 16px;
                     height: 55px;
                     @include d-flex();
+                    flex-wrap: nowrap;
                     @include align-items(center);
                     gap: 8px;
                     @include bd-radius(8px);
@@ -82,38 +97,51 @@
                     transition: all 0.3s ease;
                     font-weight: 500;
                     font-size: 16px;
-                    color: rgba(74,74,74,1.00);
+                    color: rgba(74, 74, 74, 1.00);
                     width: 100%;
                     transition: width 0.3s ease;
-                    @media #{$max767}{
+
+                    @media #{$max767} {
                         padding: 0;
                         height: auto;
                         width: auto;
-                        color: rgba(0,0,0,1.00);
+                        color: rgba(0, 0, 0, 1.00);
                     }
-                    &:hover{
+
+                    &:hover {
                         background: rgba(0, 0, 0, 0.05);
                         transform: scale(1.02);
                     }
-                    &.active{
+
+                    &.active {
                         background-color: $color-primary;
-                        color: rgba(255,255,255,1.00);
-                        @media #{$max767}{
+                        color: rgba(255, 255, 255, 1.00);
+
+                        @media #{$max767} {
                             background: transparent;
-                            color: rgba(0,0,0,1.00);
+                            color: rgba(0, 0, 0, 1.00);
                         }
-                        &:hover{
+
+                        &:hover {
                             transform: scale(1);
                         }
                     }
-                    .icon{
+
+                    .icon {
                         line-height: 1;
-                        i{
+                        opacity: 1;
+
+                        i {
                             font-size: 20px;
                         }
                     }
-                    .text{
-                        @media #{$max767}{
+
+                    .text {
+                        width: auto;
+                        opacity: 1;
+                        transition: width 1s linear, opacity 1s linear;
+
+                        @media #{$max767} {
                             display: none;
                         }
                     }
@@ -121,92 +149,116 @@
             }
         }
     }
-    .sidebar-footer{
+
+    .sidebar-footer {
         padding: 20px 16px;
-        border-top: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
         @include d-flex();
         @include justify-content(space-between);
         @include align-items(center);
         gap: 12px;
         height: 73px;
-        @media  #{$max767}{
+
+        @media #{$max767} {
             display: none;
         }
-        .user{
+
+        .user {
             width: 100%;
             @include d-flex();
             @include justify-content(space-between);
             @include align-items(center);
             flex-wrap: nowrap;
-            .user-info{
+
+            .user-info {
                 @include d-flex();
                 @include align-items(center);
                 flex-wrap: nowrap;
                 gap: 12px;
                 opacity: 1;
-                transition: opacity 0.3s ease, max-width 0.3s ease;
-                .avatar{
+                transition: opacity 1s ease, width 1s ease;
+
+                .avatar {
                     width: 40px;
                     height: 40px;
                     @include box-circle();
                 }
+
                 .user-name {
                     flex: 1;
-                    color: rgba(74,74,74,1.00);
+                    color: rgba(74, 74, 74, 1.00);
                     font-weight: bold;
                     max-width: 125px;
-                    .user-id{
+
+                    .user-id {
                         font-size: 12px;
                         line-height: 1;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         font-weight: 400;
-                        color: rgba(136,136,136,1.00);
+                        color: rgba(136, 136, 136, 1.00);
                     }
                 }
             }
-            .mh-logout{
+
+            .mh-logout {
                 width: 32px;
                 height: 32px;
                 font-size: 22px;
                 color: rgb(136, 136, 136);
-                background: rgba(0,0,0,0.05);   
+                background: rgba(0, 0, 0, 0.05);
                 transition: all 0.3s ease;
                 @include bd-radius(20px);
                 @include d-flex();
                 @include align-items(center);
                 @include justify-content(center);
                 cursor: pointer;
-                &:hover{
-                    background-color: rgba(0,0,0,0.15);
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.15);
                     transform: scale(1.05);
                 }
             }
         }
     }
-    &.collapsed{
+
+    &.collapsed {
         width: 80px;
-        .sidebar-top{
+
+        .sidebar-top {
             .arrow {
+                right: -18px;
                 margin-top: 10px;
                 transform: rotate(180deg);
             }
         }
-        li{
-            a{
-                width: fit-content;
-                transition: width 0.3s ease;
-                .text{
-                    display: none;
+
+        .sidebar-nav {
+            ul {
+                li {
+                    a {
+                        width: fit-content;
+                        transition: width 1s ease;
+                        gap: 0;
+                        margin: auto;
+                        .text {
+                            width: 0;
+                            opacity: 0;
+                            transition: width 1s linear;
+                        }
+                    }
                 }
             }
         }
-        .sidebar-footer{
-            .user{
+
+        .sidebar-footer {
+            .user {
                 @include justify-content(center);
-                .user-info{
-                    display: none;
+                .user-info {
+                    visibility: hidden;
+                    opacity: 0;
+                    width: 0;
                 }
             }
         }

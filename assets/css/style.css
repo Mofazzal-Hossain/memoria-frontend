@@ -217,6 +217,7 @@ h6 {
   -webkit-align-items: center;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 @media only screen and (max-width: 767.98px) {
   .mh-left-sidebar .sidebar-top {
@@ -231,6 +232,8 @@ h6 {
   max-width: 70px;
 }
 .mh-left-sidebar .sidebar-top .arrow {
+  position: absolute;
+  right: 16px;
   width: 32px;
   height: 32px;
   font-size: 24px;
@@ -298,6 +301,7 @@ h6 {
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  flex-wrap: nowrap;
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
@@ -342,9 +346,15 @@ h6 {
 }
 .mh-left-sidebar .sidebar-nav ul li a .icon {
   line-height: 1;
+  opacity: 1;
 }
 .mh-left-sidebar .sidebar-nav ul li a .icon i {
   font-size: 20px;
+}
+.mh-left-sidebar .sidebar-nav ul li a .text {
+  width: auto;
+  opacity: 1;
+  transition: width 1s linear, opacity 1s linear;
 }
 @media only screen and (max-width: 767.98px) {
   .mh-left-sidebar .sidebar-nav ul li a .text {
@@ -413,7 +423,7 @@ h6 {
   flex-wrap: nowrap;
   gap: 12px;
   opacity: 1;
-  transition: opacity 0.3s ease, max-width 0.3s ease;
+  transition: opacity 1s ease, width 1s ease;
 }
 .mh-left-sidebar .sidebar-footer .user .user-info .avatar {
   width: 40px;
@@ -473,15 +483,20 @@ h6 {
   width: 80px;
 }
 .mh-left-sidebar.collapsed .sidebar-top .arrow {
+  right: -18px;
   margin-top: 10px;
   transform: rotate(180deg);
 }
-.mh-left-sidebar.collapsed li a {
+.mh-left-sidebar.collapsed .sidebar-nav ul li a {
   width: fit-content;
-  transition: width 0.3s ease;
+  transition: width 1s ease;
+  gap: 0;
+  margin: auto;
 }
-.mh-left-sidebar.collapsed li a .text {
-  display: none;
+.mh-left-sidebar.collapsed .sidebar-nav ul li a .text {
+  width: 0;
+  opacity: 0;
+  transition: width 1s linear;
 }
 .mh-left-sidebar.collapsed .sidebar-footer .user {
   -webkit-box-pack: center;
@@ -491,7 +506,9 @@ h6 {
   justify-content: center;
 }
 .mh-left-sidebar.collapsed .sidebar-footer .user .user-info {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
 }
 
 .mh-wlc-wrapper {
@@ -1543,6 +1560,166 @@ h6 {
 }
 .mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts-wrapper .favourites-no-posts a:hover {
   background: rgba(0, 0, 0, 0.06);
+}
+
+.mh-memorial-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.mh-memorial-content .cover {
+  height: 217px;
+  background: rgb(240, 240, 240);
+  position: relative;
+}
+.mh-memorial-content .cover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(244, 239, 227));
+}
+.mh-memorial-content .cover img {
+  object-fit: cover;
+}
+.mh-memorial-content .user-profile {
+  margin-top: -90px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 9;
+}
+.mh-memorial-content .user-profile img {
+  box-shadow: 0px 2px 3.84px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  border: 6px solid white;
+  background: rgb(244, 239, 227);
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+.mh-memorial-content .user-profile h1 {
+  font-size: 24px;
+  color: rgb(26, 26, 26);
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.mh-memorial-content .user-profile p {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: rgb(102, 102, 102);
+}
+.mh-memorial-content .user-profile ul.list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+.mh-memorial-content .user-profile ul.list li a {
+  padding: 6px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 24px;
+  color: rgb(26, 26, 26);
+}
+.mh-memorial-content .user-profile ul.list li:last-child a:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.mh-memorial-content .memorial-tabs nav .nav-tabs {
+  border: 0;
+}
+.mh-memorial-content .memorial-tabs nav .nav-tabs .nav-link {
+  flex: 1;
+  background: transparent;
+  color: rgb(102, 102, 102);
+  font-size: 16px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+}
+.mh-memorial-content .memorial-tabs nav .nav-tabs .nav-link.active {
+  border-color: rgb(26, 26, 26);
+  font-weight: 600;
+  color: rgb(26, 26, 26);
+  background: transparent;
+}
+.mh-memorial-content .memorial-tabs .tab-content {
+  padding: 20px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content {
+  padding: 16px;
+  margin-top: 22px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item {
+  margin-bottom: 40px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item h2 {
+  font-size: 18px;
+  color: rgb(68, 68, 68);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 14px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item ul li h4 {
+  font-weight: bold;
+  width: 120px;
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item ul li p {
+  flex: 1;
+  line-height: 1;
+  color: rgb(68, 68, 68);
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-about-content .item ul li:last-child {
+  border-bottom: 0;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info .details {
+  margin-top: 24px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info .details ul li {
+  margin-bottom: 24px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info .details ul li p {
+  font-size: 14px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info .details ul li h3 {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */
