@@ -33,11 +33,10 @@
         }
 
         .logo {
-            width: 120px;
-
             img {
                 height: auto;
-                max-width: 70px;
+                width: 80px;
+                transition: width .5s linear;
             }
         }
 
@@ -231,6 +230,11 @@
                 right: -18px;
                 margin-top: 10px;
                 transform: rotate(180deg);
+            }
+            .logo {
+                img {
+                    width: 50px;
+                }
             }
         }
 

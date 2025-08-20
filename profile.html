@@ -17,7 +17,7 @@
             <div class="sidebar-top">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                        <img src="assets/images/memoria.jpg"  alt="memoria">
                     </a>
                 </div>
                 <div class="arrow" id="sidebarHide">
@@ -94,14 +94,14 @@
                             </div>
                             <div class="text">Memorials</div>
                         </a>
-                        <a href="#" class="followers">
+                        <a href="#" class="followers" data-bs-toggle="offcanvas" data-bs-target="#userFollowModal" aria-controls="userFollowModal">
                             <div class="count"> 
                                 <i class="ri-group-2-line"></i> 
                                 <span>0</span>
                             </div>
                             <div class="text">Followers</div>
                         </a>
-                        <a href="#" class="following">
+                        <a href="#" class="following" data-bs-toggle="offcanvas" data-bs-target="#userFollowModal" aria-controls="userFollowModal">
                             <div class="count"> 
                                 <i class="ri-group-line"></i>
                                 <span>0</span>
@@ -166,12 +166,116 @@
                                 </ul>
                             </div>
                             <div class="medallions-posts-wrapper">
-                                <div class="medallions-no-posts">No medallions found</div>
+                                <div class="medallions-posts">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="title">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-lock-line"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                       <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="title">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-lock-line"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="title">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-lock-line"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="medallions-no-posts" style="display: none;">No medallions found</div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                             <div class="favourites-posts-wrapper">
-                                <div class="favourites-no-posts">
+                                <div class="favourites-posts">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="user-name">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-heart-fill"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                       <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="user-name">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-heart-fill"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="user">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/posted-user.jpg" alt="avatar">
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="user-name">John Doe</div>
+                                                    <div class="date">1985 - July 11, 2024</div>
+                                                </div>
+                                            </a>
+                                            <div class="icon">
+                                                <a href="#">
+                                                    <i class="ri-heart-fill"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="favourites-no-posts" style="display: none;">
                                     <i class="ri-heart-line"></i>
                                     <p>No favourite medallions found. Heart medallions to add them to your favourites.</p>
                                     <a href="#">Browse Medallions</a>
@@ -180,6 +284,65 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="offcanvas offcanvas-bottom mh-user-follow-modal" tabindex="-1" id="userFollowModal" aria-labelledby="userFollowModalLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">Followers</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ri-close-large-fill"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body small">
+            <div class="user-list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="icon">
+                            <i class="ri-user-3-fill"></i>
+                            </div>
+                            <div class="user-info">
+                                <div class="name">John Doe</div>
+                                <div class="bio">Nothing</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon">
+                            <i class="ri-user-3-fill"></i>
+                            </div>
+                            <div class="user-info">
+                                <div class="name">John Doe</div>
+                                <div class="bio">Nothing</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon">
+                            <i class="ri-user-3-fill"></i>
+                            </div>
+                            <div class="user-info">
+                                <div class="name">John Doe</div>
+                                <div class="bio">Nothing</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon">
+                            <i class="ri-user-3-fill"></i>
+                            </div>
+                            <div class="user-info">
+                                <div class="name">John Doe</div>
+                                <div class="bio">Nothing</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

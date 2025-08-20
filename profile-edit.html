@@ -17,7 +17,7 @@
             <div class="sidebar-top">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                        <img src="assets/images/memoria.jpg"  alt="memoria">
                     </a>
                 </div>
                 <div class="arrow" id="sidebarHide">
@@ -69,13 +69,165 @@
         </div>
         <div class="mh-main-content">
             <div class="user-profile-edit">
-                <div class="user-profile-cover">
-                    <img src="" alt="">
+                <!-- Cover Photo -->
+                <div class="cover-photo text-center mb-4">
+                    <div class="user-cover-image">
+                        <img src="" class="img-fluid" alt="user cover image" style="display: none;">
+                        <div class="cover-photo-info">
+                            <i class="ri-image-line"></i>
+                            <p>Add Cover Photo</p>
+                        </div>
+                    </div>
+                    <a href="#" class="file-upload" id="changeCoverBtn">Change Cover Photo</a>
+                    <input type="file" id="coverInput" accept="image/*" style="display:none;">
                 </div>
+
+                <!-- Profile Photo -->
+                <div class="profile-photo text-center mb-4">
+                    <div class="user-profile-image">
+                        <img src="" class="rounded-circle" alt="user profile image" style="display: none;">
+                        <div class="icon">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="file-upload" id="changeProfileBtn">Change Profile Photo</a>
+                    <input type="file" id="profileInput" accept="image/*" style="display:none;">
+                </div>
+
+                <!-- Form -->
+                <form>
+                    <!-- Username -->
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="username" placeholder="Username">
+                        <label for="username">Username</label>
+                    </div>
+
+                    <!-- First Name -->
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                        <label for="firstName">First Name</label>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        <label for="lastName">Last Name</label>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="form-field form-floating mb-3">
+                        <textarea class="form-control" placeholder="Bio" id="bio" style="height: 87px"></textarea>
+                        <label for="bio">Bio</label>
+                    </div>
+
+                    <!-- Profile Visibility -->
+                    <div class="form-section-title">Profile Visibility</div>
+                    <div class="form-field form-check">
+                        <input class="form-check-input" type="radio" name="visibility" id="public" checked>
+                        <label class="form-check-label" for="public">
+                        <strong>Public</strong> 
+                        <small>Anyone can find and view your profile</small>
+                        </label>
+                    </div>
+                    <div class="form-field form-check">
+                        <input class="form-check-input" type="radio" name="visibility" id="private">
+                        <label class="form-check-label" for="private">
+                        <strong>Private</strong> 
+                        <small>Only your followers can see your full profile</small>
+                        </label>
+                    </div>
+                    <div class="form-field form-check mb-3">
+                        <input class="form-check-input" type="radio" name="visibility" id="unlisted">
+                        <label class="form-check-label" for="unlisted">
+                        <strong>Unlisted</strong> 
+                        <small>Not shown in search results, but accessible via direct link</small>
+                        </label>
+                    </div>
+
+                    <!-- Address Info -->
+                    <div class="form-section-title">Address Information</div>
+
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="street" placeholder="Street Address">
+                        <label for="street">Street Address</label>
+                    </div>
+
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="city" placeholder="City">
+                        <label for="city">City</label>
+                    </div>
+
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="state" placeholder="State/Province">
+                        <label for="state">State / Province</label>
+                    </div>
+
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="postal" placeholder="Postal Code">
+                        <label for="postal">Postal Code</label>
+                    </div>
+
+                    <div class="form-field form-floating mb-3">
+                        <input type="text" class="form-control" id="country" placeholder="Country">
+                        <label for="country">Country</label>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="form-field mt-5 mb-4">
+                        <button type="submit" class="mh-btn w-100 rounded-pill">Save</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Cover Photo
+        const coverBtn = document.getElementById("changeCoverBtn");
+        const coverInput = document.getElementById("coverInput");
+        const coverImg = document.querySelector(".user-cover-image img");
+        const coverInfo = document.querySelector(".cover-photo-info");
+
+        coverBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            coverInput.click();
+        });
+
+        coverInput.addEventListener("change", function(){
+            if(this.files && this.files[0]){
+                const reader = new FileReader();
+                reader.onload = function(e){
+                    coverImg.src = e.target.result;
+                    coverImg.style.display = "block";
+                    coverInfo.style.display = "none"; 
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+
+        // Profile Photo
+        const profileBtn = document.getElementById("changeProfileBtn");
+        const profileInput = document.getElementById("profileInput");
+        const profileImg = document.querySelector(".user-profile-image img");
+        const profileIcon = document.querySelector(".profile-photo .icon");
+
+        profileBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            profileInput.click();
+        });
+
+        profileInput.addEventListener("change", function(){
+            if(this.files && this.files[0]){
+                const reader = new FileReader();
+                reader.onload = function(e){
+                    profileImg.src = e.target.result;
+                    profileImg.style.display = "block";
+                    profileIcon.style.display = "none"; // hide icon
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    </script>
 </body>
 </html>

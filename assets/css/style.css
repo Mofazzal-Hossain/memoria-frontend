@@ -128,7 +128,7 @@ main {
   justify-content: center;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   background-color: rgb(26, 26, 26);
-  color: rgb(26, 26, 26);
+  color: rgb(255, 255, 255);
   font-weight: 600;
 }
 .mh-btn i {
@@ -224,12 +224,10 @@ h6 {
     display: none;
   }
 }
-.mh-left-sidebar .sidebar-top .logo {
-  width: 120px;
-}
 .mh-left-sidebar .sidebar-top .logo img {
   height: auto;
-  max-width: 70px;
+  width: 80px;
+  transition: width 0.5s linear;
 }
 .mh-left-sidebar .sidebar-top .arrow {
   position: absolute;
@@ -486,6 +484,9 @@ h6 {
   right: -18px;
   margin-top: 10px;
   transform: rotate(180deg);
+}
+.mh-left-sidebar.collapsed .sidebar-top .logo img {
+  width: 50px;
 }
 .mh-left-sidebar.collapsed .sidebar-nav ul li a {
   width: fit-content;
@@ -1561,6 +1562,186 @@ h6 {
 .mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts-wrapper .favourites-no-posts a:hover {
   background: rgba(0, 0, 0, 0.06);
 }
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li {
+  background-color: white;
+  height: 120px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .user,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 16px;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .user .user-avatar img,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user .user-avatar img {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 120px;
+  height: 100%;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .user .user-info .user-name,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .user .user-info .title,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user .user-info .user-name,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user .user-info .title {
+  font-size: 18px;
+  color: rgb(26, 26, 26);
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .user .user-info .date,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user .user-info .date {
+  font-size: 14px;
+  color: rgb(85, 85, 85);
+  letter-spacing: -0.2px;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .icon,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .icon {
+  margin: 16px;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .favourites-posts ul li .icon a,
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .icon a {
+  display: block;
+  padding: 8px;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  color: rgb(255, 0, 0);
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts {
+  padding: 0 16px;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .user .user-info .title {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.mh-user-profile .mh-user-profile-categories .tab-content .tab-pane .medallions-posts ul li .icon a {
+  color: rgb(74, 74, 74);
+}
+
+.mh-user-follow-modal {
+  top: 60px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: #EDF5FD;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom {
+  height: 100%;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-header {
+  padding: 8px;
+  border-bottom: 0.5px solid rgb(219, 219, 219);
+  height: 56px;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-header .btn-close {
+  position: absolute;
+  left: 8px;
+  font-size: 24px;
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color: rgb(102, 102, 102);
+  background: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-header .btn-close:hover {
+  background: rgba(102, 102, 102, 0.06);
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-header .btn-close:focus {
+  box-shadow: none;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body {
+  padding: 0;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a {
+  padding: 12px;
+  border-bottom: 0.5px solid rgb(219, 219, 219);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a .icon {
+  text-align: center;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a .icon i {
+  font-size: 20px;
+  color: rgb(74, 74, 74);
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a .user-info {
+  font-size: 14px;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a .user-info .name {
+  color: rgb(38, 38, 38);
+  margin-bottom: 2px;
+  line-height: 1;
+  font-weight: 600;
+}
+.mh-user-follow-modal.offcanvas.offcanvas-bottom .offcanvas-body ul li a .user-info .bio {
+  color: rgb(142, 142, 142);
+}
 
 .mh-memorial-content {
   max-width: 800px;
@@ -1720,6 +1901,292 @@ h6 {
 }
 .mh-memorial-content .memorial-tabs .tab-content .tab-content .bio-location-info .details ul li h3 {
   font-size: 16px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content {
+  margin-top: 20px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 16px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-header .tribute-input {
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  min-height: 100px;
+  color: rgb(26, 26, 26);
+  font-size: 16px;
+  letter-spacing: 0.15px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-header .tribute-btn {
+  background: transparent;
+  border: 1px solid rgb(26, 26, 26);
+  font-size: 14px;
+  padding: 10px 24px;
+  color: rgb(26, 26, 26);
+  margin-top: 0px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-header .tribute-btn:hover {
+  background: rgb(26, 26, 26);
+  color: white;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box {
+  padding: 20px 16px;
+  border-bottom: 1px solid rgb(26, 26, 26);
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .user-details {
+  gap: 12px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .user-details img {
+  width: 40px;
+  height: 40px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .user-details .user-info {
+  flex: 1;
+  margin-bottom: 12px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .user-details .user-info a {
+  text-decoration: underline;
+  display: block;
+  color: rgb(0, 102, 204);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .user-details .user-info .posted {
+  color: rgb(26, 26, 26);
+  font-size: 13px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box p {
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .message-btn {
+  background: transparent;
+  border: 1px solid rgb(26, 26, 26);
+  font-size: 14px;
+  padding: 6px 16px;
+  color: rgb(26, 26, 26);
+  margin-top: 0px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .message-btn:hover {
+  background: rgb(26, 26, 26);
+  color: white;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .tribute-text {
+  font-size: 16px;
+  color: rgb(26, 26, 26);
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .tribute-actions {
+  font-size: 14px;
+  color: rgb(26, 26, 26);
+  font-weight: 400;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .tribute-actions a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  color: rgb(26, 26, 26);
+  margin-right: 8px;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.mh-memorial-content .memorial-tabs .tab-content .tributes-content .tribute-box .tribute-actions a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.user-profile-edit {
+  max-width: 800px;
+  margin: 16px auto;
+}
+.user-profile-edit .cover-photo .user-cover-image {
+  height: 150px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.user-profile-edit .cover-photo .user-cover-image img {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-profile-edit .cover-photo .user-cover-image .cover-photo-info {
+  color: rgb(74, 74, 74);
+  font-size: 14px;
+}
+.user-profile-edit .cover-photo .user-cover-image .cover-photo-info i {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+.user-profile-edit .profile-photo .user-profile-image {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.user-profile-edit .profile-photo .user-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-profile-edit .profile-photo .user-profile-image i {
+  font-size: 40px;
+  color: rgb(74, 74, 74);
+}
+.user-profile-edit a.file-upload {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: rgb(26, 26, 26);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 9px 12px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  margin-top: 16px;
+}
+.user-profile-edit a.file-upload:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.user-profile-edit form .form-section-title {
+  color: rgb(38, 38, 38);
+  margin: 8px 0 16px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.user-profile-edit form .form-field {
+  margin-bottom: 16px;
+}
+.user-profile-edit form .form-field .form-control {
+  min-height: 56px;
+  border-radius: 0;
+  background: transparent;
+  color: rgb(74, 74, 74);
+  padding: 24px 16px 4px;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 0.15px;
+  background: transparent;
+  border-bottom: 0.5px solid rgb(102, 102, 102);
+}
+.user-profile-edit form .form-field .form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.user-profile-edit form .form-field .form-control:focus ~ label {
+  font-size: 13px;
+  color: rgb(26, 26, 26);
+  background: transparent;
+}
+.user-profile-edit form .form-field .form-check-input {
+  background: transparent;
+  margin-top: 0;
+  border-color: rgb(26, 26, 26);
+  position: relative;
+}
+.user-profile-edit form .form-field .form-check-input::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: rgb(26, 26, 26);
+  opacity: 0;
+}
+.user-profile-edit form .form-field .form-check-input:checked::after {
+  opacity: 1;
+}
+.user-profile-edit form .form-field .form-check-input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.user-profile-edit form .form-field label {
+  color: rgb(74, 74, 74);
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.user-profile-edit form .form-field label strong {
+  color: rgb(26, 26, 26);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

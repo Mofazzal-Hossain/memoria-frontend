@@ -157,6 +157,116 @@
                     }
                 }
             }
+
+            .tributes-content{
+                margin-top: 20px;
+                .tribute-header{
+                    border-bottom: 1px solid #ccc;
+                    padding-bottom: 16px;
+                    .tribute-input{
+                        background: transparent;
+                        padding: 15px;
+                        border: 1px solid #ccc;
+                        min-height: 100px;
+                        color: $color-black;
+                        font-size: 16px;
+                        letter-spacing: 0.15px;
+                    }
+                    .tribute-btn{
+                        background: transparent;
+                        border: 1px solid $color-black;
+                        font-size: 14px;
+                        padding: 10px 24px;
+                        color: $color-black;
+                        margin-top: 0px;
+                        border-radius: 0;
+                        transition: all 0.3s ease;
+                        @include bd-radius(8px);
+                        &:hover{
+                            background: $color-black;
+                            color: white;
+                        }
+                    }
+                }
+                .tribute-box{
+                    padding: 20px 16px;
+                    border-bottom: 1px solid $color-black;
+                    .user-details{
+                        gap: 12px;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        .user-info{
+                            flex: 1;
+                            margin-bottom: 12px;
+                            a{
+                                text-decoration: underline;
+                                display: block;
+                                color: rgba(0,102,204,1.00);
+                                font-size: 16px;
+                                font-weight: 600;
+                                line-height: 1;
+                            }
+                            .posted{
+                                color: $color-black;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    h3{
+                        font-size: 16px;
+                        margin-bottom: 8px;
+                        font-weight: 600;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: rgba(102, 102, 102, 1.00);
+                    }
+                    .message-btn{
+                        background: transparent;
+                        border: 1px solid $color-black;
+                        font-size: 14px;
+                        padding: 6px 16px;
+                        color: $color-black;
+                        margin-top: 0px;
+                        border-radius: 0;
+                        transition: all 0.3s ease;
+                        @include bd-radius(8px);
+                        &:hover{
+                            background: $color-black;
+                            color: white;
+                        }
+                    }
+                    .tribute-text{
+                        font-size: 16px;
+                        color: $color-black;
+                        margin-top: 8px;
+                        margin-bottom: 20px;
+                    }
+                    .tribute-actions{
+                        font-size: 14px;
+                        color: $color-black;
+                        font-weight: 400;
+                        a{
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                            font-size: 16px;
+                            color: $color-black;
+                            margin-right: 8px;
+                            transition: all 0.3s ease;
+                            @include bd-radius(8px);
+                            @include d-flex();
+                            @include align-items(center);
+                            @include justify-content(center);
+                            &:hover{
+                                background: rgba(0,0,0,0.06);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
