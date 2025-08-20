@@ -327,7 +327,6 @@ h6 {
 }
 .mh-left-sidebar .sidebar-nav ul li a:hover {
   background: rgba(0, 0, 0, 0.05);
-  transform: scale(1.02);
 }
 .mh-left-sidebar .sidebar-nav ul li a.active {
   background-color: #2E3A52;
@@ -338,9 +337,6 @@ h6 {
     background: transparent;
     color: rgb(0, 0, 0);
   }
-}
-.mh-left-sidebar .sidebar-nav ul li a.active:hover {
-  transform: scale(1);
 }
 .mh-left-sidebar .sidebar-nav ul li a .icon {
   line-height: 1;
