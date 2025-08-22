@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <link rel="stylesheet" href="assets//css/style.min.css">
 </head>
 <body>
@@ -105,9 +106,10 @@
                         </div>
                         <div class="mh-news-item-content">
                             <div class="mh-news-item-content-image">
-                                <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                                <a href="assets/images/memoria.jpg" class="glightbox">
+                                    <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                                </a>
                             </div>
-                            
                         </div>
                         <div class="mh-news-item-footer">
                             <div class="mh-news-item-footer-icon">
@@ -131,14 +133,14 @@
                         </div>
                         <div class="mh-news-item-comments">
                             <div class="avatar">
-                                <img src="assets/images/user-profile.png" class="w-100 h-100" alt="user profile">
+                                <img src="assets/images/user-profile.png" class="w-100" alt="memoria">
                             </div>
                             <textarea name="comments" id="comments"></textarea>
                             <button type="button" class="mh-send-comments"><i class="ri-send-plane-2-line"></i></button>
                         </div>
                     </div>
                     <!-- item -->
-                <div class="mh-news-item">
+                    <div class="mh-news-item">
                         <div class="mh-news-item-header">
                             <a href="#">
                                 <div class="mh-news-item-avatar">
@@ -154,7 +156,9 @@
                         </div>
                         <div class="mh-news-item-content">
                             <div class="mh-news-item-content-image">
-                                <img src="assets/images/memoria.jpg" class="w-100 h-100" alt="memoria">
+                                <a href="assets/images/memoria.jpg" class="glightbox">
+                                    <img src="assets/images/memoria.jpg" class="w-100" alt="memoria">
+                                </a>
                             </div>
                             
                         </div>
@@ -211,6 +215,11 @@
         </div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <script>
+        const lightbox = GLightbox({});
+    </script>
 </body>
 </html>
