@@ -5,11 +5,13 @@
 .mh-memorial-content {
     max-width: 800px;
     margin: 0 auto;
+
     .cover {
         height: 217px;
-        background: rgba(240,240,240,1.00);
+        background: rgba(240, 240, 240, 1.00);
         position: relative;
-        &::after{
+
+        &::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -18,44 +20,67 @@
             height: 60px;
             background: linear-gradient(rgba(0, 0, 0, 0), rgb(244, 239, 227));
         }
-        img{
+
+        img {
             object-fit: cover;
         }
     }
-    .user-profile{
+
+    .user-profile {
         margin-top: -90px;
         padding: 15px;
         text-align: center;
         position: relative;
         z-index: 9;
+
         img {
-            box-shadow: 0px 2px 3.84px rgba(0,0,0,0.25);
+            box-shadow: 0px 2px 3.84px rgba(0, 0, 0, 0.25);
             border-radius: 40px;
             border: 6px solid white;
-            background: rgba(244,239,227,1.00);
+            background: rgba(244, 239, 227, 1.00);
             width: 120px;
             height: 120px;
             margin-bottom: 10px;
         }
-        h1{
+
+        .flowers-sent {
+            padding: 4px 6px;
+            background: white;
+            box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+            border-radius: 40px;
+            width: fit-content;
+            @include d-flex();
+            @include align-items(center);
+            gap: 5px;
+            position: absolute;
+            top: 105px;
+            transform: translateX(-50%);
+            left: 50%;
+            color: $color-black;
+        }
+
+        h1 {
             font-size: 24px;
             color: $color-black;
             font-weight: 700;
             margin-bottom: 4px;
             line-height: 1;
         }
-        p{
+
+        p {
             font-size: 16px;
             margin-bottom: 4px;
             color: rgba(102, 102, 102, 1.00);
         }
-        ul.list{
+
+        ul.list {
             @include d-flex();
             @include justify-content(center);
             gap: 16px;
             margin-top: 14px;
-            li{
-                a{
+
+            li {
+                a {
                     padding: 6px;
                     display: block;
                     width: 40px;
@@ -64,10 +89,11 @@
                     font-size: 24px;
                     color: $color-black;
                 }
+
                 &:last-child {
-                    a{
-                        &:hover{
-                            background-color: rgba(0,0,0,0.06);
+                    a {
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.06);
                         }
                     }
                 }
@@ -75,19 +101,21 @@
         }
     }
 
-    .memorial-tabs{
-        nav{
-            .nav-tabs{
+    .memorial-tabs {
+        nav {
+            .nav-tabs {
                 border: 0;
-                .nav-link{
+
+                .nav-link {
                     flex: 1;
                     background: transparent;
-                    color: rgba(102,102,102,1.00);
+                    color: rgba(102, 102, 102, 1.00);
                     font-size: 16px;
                     padding: 10px 0;
                     border: 0;
                     border-bottom: 2px solid transparent;
-                    &.active{
+
+                    &.active {
                         border-color: $color-black;
                         font-weight: 600;
                         color: $color-black;
@@ -96,60 +124,73 @@
                 }
             }
         }
-        .tab-content{
+
+        .tab-content {
             padding: 20px;
-            .tab-content{
+
+            .tab-content {
                 padding: 16px;
                 margin-top: 22px;
-                .bio-about-content{
-                    .item{
+
+                .bio-about-content {
+                    .item {
                         margin-bottom: 40px;
-                        h2{
+
+                        h2 {
                             font-size: 18px;
-                            color: rgba(68,68,68,1.00);
+                            color: rgba(68, 68, 68, 1.00);
                             font-weight: bold;
                             margin-bottom: 12px;
                         }
-                        ul{
-                            li{
+
+                        ul {
+                            li {
                                 padding: 8px 0;
-                                border-bottom: 1px solid rgba(224,224,224,1.00);
+                                border-bottom: 1px solid rgba(224, 224, 224, 1.00);
                                 @include d-flex();
                                 @include align-items(center);
                                 font-size: 14px;
-                                h4{
+
+                                h4 {
                                     font-weight: bold;
                                     width: 120px;
                                     font-size: 14px;
-                                    color: rgba(102,102,102,1.00);
+                                    color: rgba(102, 102, 102, 1.00);
                                 }
-                                p{
+
+                                p {
                                     flex: 1;
                                     line-height: 1;
-                                    color: rgba(68,68,68,1.00);
+                                    color: rgba(68, 68, 68, 1.00);
                                 }
-                                &:last-child{
+
+                                &:last-child {
                                     border-bottom: 0;
                                 }
                             }
                         }
                     }
                 }
-                .bio-location-info{
-                    h2{
+
+                .bio-location-info {
+                    h2 {
                         font-size: 18px;
                         margin-bottom: 16px;
                         font-weight: bold;
                     }
-                    .details{
+
+                    .details {
                         margin-top: 24px;
-                        ul{
-                            li{
+
+                        ul {
+                            li {
                                 margin-bottom: 24px;
-                                p{
+
+                                p {
                                     font-size: 14px;
                                 }
-                                h3{
+
+                                h3 {
                                     font-size: 16px;
                                 }
                             }
@@ -158,12 +199,14 @@
                 }
             }
 
-            .tributes-content{
+            .tributes-content {
                 margin-top: 20px;
-                .tribute-header{
+
+                .tribute-header {
                     border-bottom: 1px solid #ccc;
                     padding-bottom: 16px;
-                    .tribute-input{
+
+                    .tribute-input {
                         background: transparent;
                         padding: 15px;
                         border: 1px solid #ccc;
@@ -172,7 +215,8 @@
                         font-size: 16px;
                         letter-spacing: 0.15px;
                     }
-                    .tribute-btn{
+
+                    .tribute-btn {
                         background: transparent;
                         border: 1px solid $color-black;
                         font-size: 14px;
@@ -182,48 +226,58 @@
                         border-radius: 0;
                         transition: all 0.3s ease;
                         @include bd-radius(8px);
-                        &:hover{
+
+                        &:hover {
                             background: $color-black;
                             color: white;
                         }
                     }
                 }
-                .tribute-box{
+
+                .tribute-box {
                     padding: 20px 16px;
                     border-bottom: 1px solid $color-black;
-                    .user-details{
+
+                    .user-details {
                         gap: 12px;
-                        img{
+
+                        img {
                             width: 40px;
                             height: 40px;
                         }
-                        .user-info{
+
+                        .user-info {
                             flex: 1;
                             margin-bottom: 12px;
-                            a{
+
+                            a {
                                 text-decoration: underline;
                                 display: block;
-                                color: rgba(0,102,204,1.00);
+                                color: rgba(0, 102, 204, 1.00);
                                 font-size: 16px;
                                 font-weight: 600;
                                 line-height: 1;
                             }
-                            .posted{
+
+                            .posted {
                                 color: $color-black;
                                 font-size: 13px;
                             }
                         }
                     }
-                    h3{
+
+                    h3 {
                         font-size: 16px;
                         margin-bottom: 8px;
                         font-weight: 600;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                         color: rgba(102, 102, 102, 1.00);
                     }
-                    .message-btn{
+
+                    .message-btn {
                         background: transparent;
                         border: 1px solid $color-black;
                         font-size: 14px;
@@ -233,22 +287,26 @@
                         border-radius: 0;
                         transition: all 0.3s ease;
                         @include bd-radius(8px);
-                        &:hover{
+
+                        &:hover {
                             background: $color-black;
                             color: white;
                         }
                     }
-                    .tribute-text{
+
+                    .tribute-text {
                         font-size: 16px;
                         color: $color-black;
                         margin-top: 8px;
                         margin-bottom: 20px;
                     }
-                    .tribute-actions{
+
+                    .tribute-actions {
                         font-size: 14px;
                         color: $color-black;
                         font-weight: 400;
-                        a{
+
+                        a {
                             display: block;
                             width: 40px;
                             height: 40px;
@@ -260,10 +318,147 @@
                             @include d-flex();
                             @include align-items(center);
                             @include justify-content(center);
-                            &:hover{
-                                background: rgba(0,0,0,0.06);
+
+                            &:hover {
+                                background: rgba(0, 0, 0, 0.06);
                             }
                         }
+                    }
+                }
+            }
+
+            .timeline-content,
+            .music-content {
+                .timeline-header {
+                    a {
+                        width: 158px;
+                        height: 40px;
+                        padding: 0;
+                        border-radius: 100px;
+                        font-size: 14px;
+                    }
+                }
+
+                .no-event-posts,
+                .no-music-posts {
+                    h5 {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 1;
+                    }
+
+                    p {
+                        margin-top: 12px;
+                        font-size: 14px;
+                        color: $color-body;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.timeline-modal {
+
+    .modal-dialog {
+        max-width: 600px;
+        padding: 0 10px;
+    }
+
+    .timeline-modal-content {
+        .event-type-btn {
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+            padding: 8px;
+            @include d-flex();
+            @include align-items(center);
+            @include justify-content(center);
+            border-radius: 100px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            color: rgb(117, 117, 117);
+            background-color: transparent;
+
+            &.active {
+                background-color: rgba(76, 175, 80, 0.13);
+                color: rgb(76, 175, 80);
+                border-color: rgb(76, 175, 80);
+            }
+        }
+
+        .event-selected {
+            font-size: 14px;
+            color: $color-body;
+
+            .event-value {
+                font-weight: 600;
+                color: rgb(76, 175, 80);
+            }
+        }
+
+        label {
+            color: $color-body;
+        }
+
+        .form-control {
+            background: white;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            padding: 12px 16px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 20px;
+            display: block;
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.54);
+            }
+            &#eventDate {
+                cursor: pointer;
+            }
+        }
+        .timeline-uploaded-photo{
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+
+        }
+        .timeline-photos {
+            width: 120px;
+            height: 120px;
+            border-radius: 5px;
+            border: 1px dashed rgba(0, 0, 0, 0.12);
+            color: $color-black;
+            font-size: 14px;
+            cursor: pointer;
+
+            i {
+                color: $color-body;
+                font-size: 24px;
+            }
+        }
+
+        .modal-footer {
+            button {
+                background: rgba(0, 0, 0, 0);
+                border: 1px solid rgba(0, 0, 0, .12);
+                padding: 8px 20px;
+                font-size: 14px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                &:hover{
+                    background: $color-black;
+                    color: white;
+
+                }
+                &.btn-save {
+                    background: $color-black;
+                    color: white;
+
+                    i {
+                        margin-right: 5px;
+                        font-size: 18px;
                     }
                 }
             }
